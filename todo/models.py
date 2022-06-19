@@ -8,3 +8,4 @@ class TodoList(models.Model):
     contents = models.TextField(null=True)
     completed = models.BooleanField(default=False)
     writtenTime = models.TimeField(default="00:00:00")
+    deleted = models.BooleanField(default=False)
