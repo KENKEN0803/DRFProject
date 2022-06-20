@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 app_name = "todo"
@@ -12,5 +13,4 @@ urlpatterns = [
 
     path("list/", views.ListTodoView.as_view()),
     path("<int:pk>/", views.SeeTodoView.as_view()),
-
 ]
