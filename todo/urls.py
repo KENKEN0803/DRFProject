@@ -11,6 +11,6 @@ urlpatterns = [
     # 클래스 기반 apiView 방식
     # path("list/", views.ListTodoView.as_view()),
 
-    path("list/", views.ListTodoView.as_view()),
-    path("<int:pk>/", views.SeeTodoView.as_view()),
+    path("list/", views.APIViewTodo.as_view()),
+    # path("<int:pk>/", views.SeeTodoView.as_view()),
 ]

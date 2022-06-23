@@ -10,6 +10,7 @@ class TodoSerializer(serializers.ModelSerializer):
         exclude = ()
 
 
+# 유저 관련
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User

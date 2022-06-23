@@ -17,9 +17,10 @@ def todo_list(request):
     return Response(data=serialized_list.data)
 '''
 
+
 # 클래스 기반 APIView
-'''
-class ListTodoView(APIView):
+
+class APIViewTodo(APIView):
 
     def get(self, req):
         queryset = TodoList.objects.all()
@@ -27,11 +28,13 @@ class ListTodoView(APIView):
         return Response(serializer.data)
 
     def post(self, req):
-        pass
-'''
+        print(req.data)
+        queryset = TodoList.objects.all()
+        serializer = TodoSerializer(queryset, many=True)
+        return Response(serializer.data)
 
 
-class ListTodoView(ListAPIView):
+class ListAPIViewTodo(ListAPIView):
     queryset = TodoList.objects.all()
     serializer_class = TodoSerializer
 
@@ -41,6 +44,8 @@ class SeeTodoView(RetrieveAPIView):
     serializer_class = TodoSerializer
     # lookup_url_kwarg = 'seq'
 
+
+# 유저 관련
 
 class UserViewSet(viewsets.ModelViewSet):
     """
